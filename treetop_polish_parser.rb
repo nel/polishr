@@ -1,9 +1,9 @@
 require 'rubygems'
 require 'treetop'
 
-Treetop.load 'polish'
+Treetop.load File.dirname(__FILE__) + '/polish'
 
-class PolishParser
+class TreetopPolishParser < PolishParser
   def calculate(string)
     res = parse(string)
     if !res

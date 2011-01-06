@@ -1,10 +1,8 @@
-require File.dirname(__FILE__) + '/../polish_parser'
+shared_examples_for "polish parser" do
+  def calculate(string)
+    @parser.new.calculate(string)
+  end
 
-def calculate(string)
-  PolishParser.new.calculate(string)
-end
-
-describe Polish do
   it "Should support addition" do
     calculate("+ 1 2").should == 3
   end
@@ -38,5 +36,4 @@ describe Polish do
   it "Should support parenthesis" do
     calculate("* (+ 1 3) 2").should == 8
   end
-
 end

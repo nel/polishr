@@ -1,13 +1,33 @@
-# PEG implementation of polish notation in ruby
+# Various implementation of polish notation in ruby
 
-The purpose of this project is just to have a simple working example of PEG
-parser with treetop to do speed comparison.
+The purpose of this project is just to have a simple working example of polish
+notation parser.
 
-This should be fully operationnal nonetheless
+Currently two different implementation are available: handcraft parser and PEG
+parser with treetop (depends on treetop)
+
+This is a toy project, it should be operationnal nonetheless
 
 ## Usage
 
-    require 'polish_parser'
+    require 'treetop_polish_parser'
 
-    PolishParser.new.calculate('* -4 / 2.0 4')
+    TreetopPolishParser.new.calculate('* -4 / 2.0 4')
     => -2.0
+
+or
+    require 'handcraft_polish_parser'
+
+    HandcraftPolishParser.new.calculate('* -4 / 2.0 4')
+     => -2.0
+
+## Specs
+
+You have some useful spec to check whether everything is working fine for any
+implementation it should be rspec 1.x compatible. To run it:
+
+    $ rspec -f d spec/*_spec.rb
+
+or for rspec 1.x
+
+    $ spec spec/*_spec.rb
