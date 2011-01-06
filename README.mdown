@@ -1,0 +1,8 @@
+# PEG implementation of polish notation in ruby
+
+The purpose of this project is just to have a simple working example of PEG
+parser with treetop to do speed comparison.
+
+This should be fully operationnal nonetheless
+
+Look at the specs for syntax

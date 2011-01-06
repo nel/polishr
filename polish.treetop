@@ -1,0 +1,51 @@
+grammar Polish
+  rule expression
+    figure / operation
+  end
+
+  rule figure
+    (([1-9] [0-9]*) / '0') {
+        def eval
+            text_value.to_i
+        end
+    }
+  end
+
+  rule operator
+    '+' {
+        def apply(a,b)
+            a + b
+        end
+    }
+    /
+    '-' {
+        def apply(a,b)
+            a - b
+        end
+    }
+    /
+    '*' {
+        def apply(a,b)
+            a * b
+        end
+    }
+    /
+    '%' {
+        def apply(a,b)
+            a / b
+        end
+    }
+  end
+
+  rule operation
+    operator space a:expression space b:expression {
+        def eval
+            operator.apply(a.eval, b.eval)
+        end
+    }
+  end
+
+  rule space
+    ' '*
+  end  
+end
