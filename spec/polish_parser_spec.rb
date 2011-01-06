@@ -26,6 +26,10 @@ describe Polish do
     calculate("- -4 -8").should == 4
   end
 
+  it "should support float" do
+    calculate("/ 1 0.5").should == 2.0
+  end
+
   it "Should support operation priority" do
     calculate("* - 2 1 1").should == 1
     calculate("+ 1 * 1 2").should == 3

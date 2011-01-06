@@ -40,9 +40,9 @@ grammar Polish
   end  
 
   rule figure
-    '-'? [0-9]+ {
+    '-'? [0-9]+ float:('.' [0-9]+ )? {
         def eval
-            text_value.to_i
+            float.empty? ? text_value.to_i : text_value.to_f
         end
     }
   end
