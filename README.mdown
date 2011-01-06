@@ -5,4 +5,9 @@ parser with treetop to do speed comparison.
 
 This should be fully operationnal nonetheless
 
-Look at the specs for syntax
+## Usage
+
+    require 'polish_parser'
+
+    PolishParser.new.calculate('* -4 / 2.0 4')
+    => -2.0
