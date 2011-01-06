@@ -1,6 +1,22 @@
 grammar Polish
+  rule entry
+    space expression space {
+        def eval
+            expression.eval
+        end
+    }
+  end
+  
   rule expression
-    figure / operation
+    '(' entry ')' {
+        def eval
+            entry.eval
+        end
+    }
+    /
+    figure
+    / 
+    operation
   end
 
   rule figure
