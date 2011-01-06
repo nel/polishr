@@ -3,10 +3,23 @@
 The purpose of this project is just to have a simple working example of polish
 notation parser.
 
-Currently two different implementation are available: handcraft parser and PEG
-parser with treetop (depends on treetop)
+Currently two different implementation are available: handcraft parser and PEG with treetop
 
 This is a toy project, it should be operationnal nonetheless
+
+## Features
+
+Both implementation supports:
+    - Integer / Float
+    - negative numbers
+    - + - / *
+    - parenthesis
+    - Tolerant spacing
+
+## Depencies
+
+    Treetop parser depends on treetop and specs on rpec 1.x+
+
 
 ## Usage
 
