@@ -19,7 +19,11 @@ describe Polish do
   end
 
   it "Should be permissive in syntax" do
-    calculate(" +1*3 4 ").should == 13
+    calculate(" +1*3-4 ").should == -11
+  end
+
+  it "should support negative number" do
+    calculate("- -4 -8").should == 4
   end
 
   it "Should support operation priority" do
