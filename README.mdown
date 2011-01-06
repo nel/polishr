@@ -18,11 +18,16 @@ Both implementation supports:
 
 ## Depencies
 
-    Treetop parser depends on treetop and specs on rpec 1.x+
+Treetop parser depends on treetop and specs on rpec 1.x+.
+To install them run:
 
+    bundle install
+
+HandcraftParser will not work under ruby 1.9 as it relies on sorted hash
 
 ## Usage
 
+    #with rubygems or bundler initialized
     require 'treetop_polish_parser'
 
     TreetopPolishParser.new.calculate('* -4 / 2.0 4')
@@ -44,3 +49,8 @@ implementation it should be rspec 1.x compatible. To run it:
 or for rspec 1.x
 
     $ spec spec/*_spec.rb
+
+Or run them independently:
+    
+    $ ruby spec/treetop_parser_spec.rb
+

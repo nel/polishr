@@ -1,3 +1,7 @@
+if RUBY_VERSION < '1.9'
+    raise 'Ruby < 1.9 is not supported as this parser implementation relies on hash beeing sorted which is not the case before 1.9'
+end
+
 class Token
   attr_accessor :value
   attr_accessor :type
